@@ -1,0 +1,85 @@
+<div class="page-sidebar-wrapper">
+  <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+  <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+  <div class="page-sidebar navbar-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul data-slide-speed="200" data-auto-scroll="true" class="page-sidebar-menu">
+      <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+      <li class="sidebar-toggler-wrapper">
+        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        <div class="sidebar-toggler">
+        </div>
+        <!-- END SIDEBAR TOGGLER BUTTON -->
+      </li>
+      <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+      <li class="start <%= params[:controller].include?('dashboard') ? 'active' : '' %>">
+        <a href="/dashboard">
+          <i class="icon-home"></i>
+          <span class="title">Dashboard</span>
+          <span class="selected"></span>
+        </a>
+      </li>
+      <li class="<%= params[:controller].include?('monsters') ? 'active' : '' %>">
+        <a href="javascript:;">
+          <i class="icon-user"></i>
+          <span class="title">Monsters</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/monsters">
+              <i class="icon-home"></i>
+              All Monsters</a>
+          </li>
+          <li>
+            <a href="/monsters/new">
+              <i class="icon-basket"></i>
+              Create Monster</a>
+          </li>
+        </ul>
+      </li>
+      <li class="<%= params[:controller]== "teams" ? 'active' : '' %>">
+        <a href="javascript:;">
+          <i class="icon-user"></i>
+          <span class="title">Teams</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/teams">
+              <i class="icon-home"></i>
+              All Teams</a>
+          </li>
+          <li>
+            <a href="/teams">
+              <i class="icon-basket"></i>
+              Create Teams</a>
+          </li>
+        </ul>
+      </li>
+      <li class="<%= params[:controller] == "monster_teams" ? 'active' : '' %>">
+        <a href="javascript:;">
+          <i class="icon-rocket"></i>
+          <span class="title">Monster Teams</span>
+          <span class="arrow "></span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/monster_teams">
+              <i class="icon-home"></i>
+              All Monster Teams</a>
+          </li>
+          <li>
+            <a href="/monster_teams/new">
+              <i class="icon-basket"></i>
+              Create Monster Teams</a>
+          </li>
+        </ul>
+      </li>
+
+
+    </ul>
+    <!-- END SIDEBAR MENU -->
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Monster:</strong>
+  <%= @monster_team.monster_id %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @monster_team.team_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @monster_team.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_monster_team_path(@monster_team) %> |
+<%= link_to 'Back', monster_teams_path %>

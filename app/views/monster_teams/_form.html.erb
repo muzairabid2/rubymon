@@ -1,0 +1,41 @@
+<div class="portlet-body form">
+  <%= form_for(@monster_team) do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <div id="errors">
+        <% if @monster_team.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@monster_team.errors.count, "error") %> prohibited this monster from being saved:</h2>
+
+              <ul>
+                <% @monster_team.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+      </div>
+      <div class="form-body">
+        <div class="form-group">
+          <label>Team Name</label>
+          <div class="input-group">
+            <%= select_tag("monster_team[team_id]", options_for_select(Team.all.map { |team| [team.name, team.id] }), :class => "form-control") %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Monster Name</label>
+          <div class="input-group">
+            <%= select_tag("monster_team[monster_id]", options_for_select(Monster.all.map { |monster| [monster.name, monster.id] }), :class => "form-control") %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <!--<button class="btn blue" type="submit">Update</button>-->
+          <%= f.submit "Save", :class => "btn blue" %>
+
+        </div>
+
+  <% end %>
+  </div>
+</div>
+
+

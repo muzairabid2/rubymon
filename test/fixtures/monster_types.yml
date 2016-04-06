@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  monster_type: MyString
+  power: MyString
+  weakness: MyString
+
+two:
+  monster_type: MyString
+  power: MyString
+  weakness: MyString
